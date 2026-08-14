@@ -1,5 +1,5 @@
 /* ============================================================
-   MILES — Hotel Supplies Catalog Data
+   LF Hospitality — Hotel Supplies Catalog Data
    ------------------------------------------------------------
    HOW TO UPDATE (no coding needed):
 
@@ -27,14 +27,14 @@
 const CATALOG = {
 
   company: {
-    name: "MILES",
+    name: "LF Hospitality",
     tagline: "Your Trusted Hotel Supplies Partner",
     intro:
-      "MILES is a one-stop sourcing partner for the hospitality industry, " +
+      "LF Hospitality is a one-stop sourcing partner for the hospitality industry, " +
       "covering hotel uniforms, F&B equipment, guestroom supplies, " +
       "operations essentials and more — from standard items to fully " +
       "custom-made solutions.",
-    email: "sales@miles-example.com",   // ← change to your real email
+    email: "sales@lfhospitality-example.com",   // ← change to your real email
   },
 
   categories: [
@@ -125,6 +125,22 @@ const CATALOG = {
      case header above. Image path: images/uniform/<case>/<file>
      ------------------------------------------------------------ */
   products: [
+    {
+      name: "Premium Tweed Suit — Women",
+      category: "Hotel Uniform",
+      collection: "case1",
+      image: "images/uniform/case1/premium-tweed-suit-women.jpg",
+      description: "Burgundy tweed jacket and skirt set with gold trim for VIP relations & executive lounge teams.",
+      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
+    },
+    {
+      name: "Premium Front Office Suit — Men",
+      category: "Hotel Uniform",
+      collection: "case1",
+      image: "images/uniform/case1/premium-front-office-suit-men.jpg",
+      description: "Burgundy suit with embellished lapels and gold tie for premium front office & guest relations.",
+      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
+    },
     {
       name: "Casino Floor Team Suit",
       category: "Hotel Uniform",

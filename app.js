@@ -1,4 +1,4 @@
-/* MILES catalog site — renders data/catalog.js. No build step needed. */
+/* LF Hospitality catalog site — renders data/catalog.js. No build step needed. */
 
 (function () {
   const { company, categories, products } = CATALOG;
