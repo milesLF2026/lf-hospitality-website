@@ -1,4 +1,4 @@
-# LF Hospitality 酒店用品网站 — 使用与更新说明
+# LI & FUNG HOSPITALITY 酒店用品网站 — 使用与更新说明
 
 这是一个纯静态网站（无需服务器、无需数据库），双击 `index.html` 即可在浏览器打开预览；
 也可整个文件夹上传到任何静态托管（如 GitHub Pages、Vercel、Netlify、阿里云 OSS、腾讯云 COS）直接上线。

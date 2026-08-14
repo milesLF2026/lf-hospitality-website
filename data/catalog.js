@@ -1,5 +1,5 @@
 /* ============================================================
-   LF Hospitality — Hotel Supplies Catalog Data
+   LI & FUNG HOSPITALITY — Hotel Supplies Catalog Data
    ------------------------------------------------------------
    HOW TO UPDATE (no coding needed):
 
@@ -27,10 +27,10 @@
 const CATALOG = {
 
   company: {
-    name: "LF Hospitality",
+    name: "LI & FUNG HOSPITALITY",
     tagline: "Your Trusted Hotel Supplies Partner",
     intro:
-      "LF Hospitality is a one-stop sourcing partner for the hospitality industry, " +
+      "LI & FUNG HOSPITALITY is a one-stop sourcing partner for the hospitality industry, " +
       "covering hotel uniforms, F&B equipment, guestroom supplies, " +
       "operations essentials and more — from standard items to fully " +
       "custom-made solutions.",

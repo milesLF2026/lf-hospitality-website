@@ -1,4 +1,4 @@
-/* LF Hospitality catalog site — renders data/catalog.js. No build step needed. */
+/* LI & FUNG HOSPITALITY catalog site — renders data/catalog.js. No build step needed. */
 
 (function () {
   const { company, categories, products } = CATALOG;
