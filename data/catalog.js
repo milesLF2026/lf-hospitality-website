@@ -99,7 +99,7 @@ const CATALOG = {
   collections: [
     {
       id: "case1",
-      title: "Executive & Front Office Collection",
+      title: "Front House Collection",
       blurb: "Tailored suits and blazers for front desk, casino floor and premium F&B service teams.",
     },
     {
@@ -141,7 +141,7 @@ const CATALOG = {
      ------------------------------------------------------------ */
   products: [
     {
-      name: "Premium Tweed Suit — Women",
+      name: "Front House Suit 01",
       category: "Hotel Uniform",
       collection: "case1",
       image: "images/uniform/case1/premium-tweed-suit-women.jpg",
@@ -149,7 +149,7 @@ const CATALOG = {
       specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
     },
     {
-      name: "Premium Front Office Suit — Men",
+      name: "Front House Suit 02",
       category: "Hotel Uniform",
       collection: "case1",
       image: "images/uniform/case1/premium-front-office-suit-men.jpg",
@@ -157,7 +157,7 @@ const CATALOG = {
       specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
     },
     {
-      name: "Casino Floor Team Suit",
+      name: "Front House Suit 03",
       category: "Hotel Uniform",
       collection: "case1",
       image: "images/uniform/case1/casino-floor-team-suit.jpg",
@@ -165,7 +165,7 @@ const CATALOG = {
       specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
     },
     {
-      name: "Front Office Suit — Women",
+      name: "Front House Suit 04",
       category: "Hotel Uniform",
       collection: "case1",
       image: "images/uniform/case1/front-office-suit-women.jpg",
@@ -173,7 +173,7 @@ const CATALOG = {
       specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
     },
     {
-      name: "Front Office Suit — Men",
+      name: "Front House Suit 05",
       category: "Hotel Uniform",
       collection: "case1",
       image: "images/uniform/case1/front-office-suit-men.jpg",
@@ -181,7 +181,7 @@ const CATALOG = {
       specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
     },
     {
-      name: "Premium F&B Suit",
+      name: "Front House Suit 06",
       category: "Hotel Uniform",
       collection: "case1",
       image: "images/uniform/case1/fnb-premium-suit.jpg",
