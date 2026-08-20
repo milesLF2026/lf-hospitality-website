@@ -34,7 +34,7 @@ const CATALOG = {
       "covering hotel uniforms, F&B equipment, guestroom supplies, " +
       "operations essentials and more — from standard items to fully " +
       "custom-made solutions.",
-    email: "sales@lfhospitality-example.com",   // ← change to your real email
+    emails: ["JimiLee@lifung.com", "JohnWu@lifung.com"],
   },
 
   categories: [
@@ -113,18 +113,13 @@ const CATALOG = {
       blurb: "Warm earth-tone service sets with aprons for restaurants, cafés and banquet service.",
     },
     {
-      id: "case4",
-      title: "Premium Lounge & Bar Collection",
-      blurb: "Black-and-gold statement uniforms for high-end lounges, bars and VIP service.",
-    },
-    {
       id: "case5",
       title: "Resort & Leisure Service Collection",
       blurb: "Polished, relaxed uniforms for resort reception, golf, poolside and casual dining service.",
     },
     {
       id: "case6",
-      title: "Fine Dining Host Collection",
+      title: "Japanese Restaurant Collection",
       blurb: "Sophisticated host and hostess uniforms created for premium restaurants and destination dining venues.",
     },
     {
@@ -282,54 +277,6 @@ const CATALOG = {
       collection: "case3",
       image: "images/uniform/case3/dining-service-look-6.jpg",
       description: "Earth-tone shirt with full apron for all-day dining service.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
-    },
-    {
-      name: "Lounge & Bar Look 01",
-      category: "Hotel Uniform",
-      collection: "case4",
-      image: "images/uniform/case4/lounge-bar-look-1.jpg",
-      description: "Black & gold statement uniform for premium lounge and bar service.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
-    },
-    {
-      name: "Lounge & Bar Look 02",
-      category: "Hotel Uniform",
-      collection: "case4",
-      image: "images/uniform/case4/lounge-bar-look-2.jpg",
-      description: "Black & gold statement uniform for premium lounge and bar service.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
-    },
-    {
-      name: "Lounge & Bar Look 03",
-      category: "Hotel Uniform",
-      collection: "case4",
-      image: "images/uniform/case4/lounge-bar-look-3.jpg",
-      description: "Black & gold statement uniform for premium lounge and bar service.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
-    },
-    {
-      name: "Lounge & Bar Look 04",
-      category: "Hotel Uniform",
-      collection: "case4",
-      image: "images/uniform/case4/lounge-bar-look-4.jpg",
-      description: "Black & gold statement uniform for premium lounge and bar service.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
-    },
-    {
-      name: "Lounge & Bar Look 05",
-      category: "Hotel Uniform",
-      collection: "case4",
-      image: "images/uniform/case4/lounge-bar-look-5.jpg",
-      description: "Black & gold statement uniform for premium lounge and bar service.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
-    },
-    {
-      name: "Lounge & Bar Look 06",
-      category: "Hotel Uniform",
-      collection: "case4",
-      image: "images/uniform/case4/lounge-bar-look-6.jpg",
-      description: "Black & gold statement uniform for premium lounge and bar service.",
       specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
     },
     {

@@ -7,8 +7,14 @@
   document.getElementById("hero-tagline").textContent = company.tagline;
   document.getElementById("hero-intro").textContent = company.intro;
   const mail = document.getElementById("contact-email");
-  mail.textContent = company.email;
-  mail.href = "mailto:" + company.email;
+  const emails = company.emails || [company.email];
+  emails.forEach((email, index) => {
+    if (index > 0) mail.appendChild(document.createTextNode(" / "));
+    const link = document.createElement("a");
+    link.textContent = email;
+    link.href = "mailto:" + email;
+    mail.appendChild(link);
+  });
   document.getElementById("year").textContent = new Date().getFullYear();
 
   // Products for live categories
