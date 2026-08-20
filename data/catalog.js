@@ -328,7 +328,7 @@ const CATALOG = {
       specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
     },
     {
-      name: "Fine Dining Host Look 01",
+      name: "Japanese Restaurant Look 01",
       category: "Hotel Uniform",
       collection: "case6",
       image: "images/uniform/case6/fine-dining-host-01.jpg",
@@ -336,7 +336,7 @@ const CATALOG = {
       specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
     },
     {
-      name: "Fine Dining Host Look 02",
+      name: "Japanese Restaurant Look 02",
       category: "Hotel Uniform",
       collection: "case6",
       image: "images/uniform/case6/fine-dining-host-02.jpg",
@@ -344,7 +344,7 @@ const CATALOG = {
       specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
     },
     {
-      name: "Fine Dining Host Look 03",
+      name: "Japanese Restaurant Look 03",
       category: "Hotel Uniform",
       collection: "case6",
       image: "images/uniform/case6/fine-dining-host-03.jpg",
@@ -352,7 +352,7 @@ const CATALOG = {
       specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
     },
     {
-      name: "Fine Dining Host Look 04",
+      name: "Japanese Restaurant Look 04",
       category: "Hotel Uniform",
       collection: "case6",
       image: "images/uniform/case6/fine-dining-host-04.jpg",
@@ -360,7 +360,7 @@ const CATALOG = {
       specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
     },
     {
-      name: "Fine Dining Host Look 05",
+      name: "Japanese Restaurant Look 05",
       category: "Hotel Uniform",
       collection: "case6",
       image: "images/uniform/case6/fine-dining-host-05.jpg",
@@ -368,7 +368,7 @@ const CATALOG = {
       specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
     },
     {
-      name: "Fine Dining Host Look 06",
+      name: "Japanese Restaurant Look 06",
       category: "Hotel Uniform",
       collection: "case6",
       image: "images/uniform/case6/fine-dining-host-06.jpg",
