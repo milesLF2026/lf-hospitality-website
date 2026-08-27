@@ -30,9 +30,7 @@
 
   const grid = document.getElementById("product-grid");
   if (grid) {
-    grid.innerHTML = liveProducts.length
-      ? ""
-      : "<p class='empty'>Products coming soon.</p>";
+    grid.innerHTML = "";
 
     // Group uniform products into their series, then by Case collection.
   const collections = CATALOG.collections || [];
@@ -174,24 +172,33 @@
     if (rest.length) appendCollection(grid, null, rest);
   }
 
-  // Category directory (OS&E Catalog page)
+  // OS&E Catalog: render every subcategory as an image card under its major category.
   const catGrid = document.getElementById("category-grid");
   if (catGrid) {
     categories
-      .filter((c) => !c.live)
-      .forEach((c) => {
-        const el = document.createElement("div");
-        el.className = "cat-card";
-        el.innerHTML = `
-          <div class="cat-img">
-            <img src="${c.image || ""}" alt="${c.en}"
-                 onerror="this.parentNode.remove();" />
-          </div>
-          <h3>${c.en}</h3>
-          <p>${c.blurb || ""}</p>
-          <ul>${c.subs.map((s) => `<li>${s}</li>`).join("")}</ul>
-          <span class="badge">Coming soon</span>`;
-        catGrid.appendChild(el);
+      .filter((category) => !category.live)
+      .forEach((category) => {
+        const section = document.createElement("section");
+        section.className = "ose-category";
+        section.innerHTML = `<div class="ose-category-head"><h2>${category.en}</h2>` +
+          (category.blurb ? `<p>${category.blurb}</p>` : "") + "</div>";
+
+        const subGrid = document.createElement("div");
+        subGrid.className = "ose-subcategory-grid";
+        category.subs.forEach((sub) => {
+          const name = typeof sub === "string" ? sub : sub.name;
+          const image = typeof sub === "string" ? "" : sub.image;
+          const card = document.createElement("article");
+          card.className = "ose-subcategory-card";
+          card.innerHTML = `
+            <div class="ose-subcategory-image">
+              <img src="${image}" alt="${name}" loading="lazy" />
+            </div>
+            <h3>${name}</h3>`;
+          subGrid.appendChild(card);
+        });
+        section.appendChild(subGrid);
+        catGrid.appendChild(section);
       });
   }
 })();
