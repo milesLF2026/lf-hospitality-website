@@ -102,6 +102,21 @@ nav a:hover { color: var(--accent); }
 .section.alt { background: var(--bg-alt); }
 .section h1, .section h2 { font-size: 32px; font-weight: 400; letter-spacing: 1px; }
 nav a[aria-current="page"] { color: var(--accent); }
+
+/* Page-specific editorial typography for the Uniforms and OS&E Catalog pages. */
+.uniforms-page, .catalog-page { font-family: "Manrope", "Helvetica Neue", Arial, sans-serif; }
+.uniforms-page .section h1, .catalog-page .section h1,
+.uniforms-page .series-head h3, .uniforms-page .collection-head h4,
+.catalog-page .ose-category-head h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 600;
+  letter-spacing: .25px;
+  line-height: 1.08;
+}
+.uniforms-page .section h1, .catalog-page .section h1 { font-size: 46px; }
+.uniforms-page .section-sub, .catalog-page .section-sub { font-size: 15px; line-height: 1.75; }
+.uniforms-page .series-head h3 { font-size: 32px; }
+.uniforms-page .collection-head h4, .catalog-page .ose-category-head h2 { font-size: 27px; }
 .section-sub { color: var(--muted); margin: 12px 0 40px; max-width: 680px; }
 
 /* Product grid */
@@ -117,22 +132,15 @@ nav a[aria-current="page"] { color: var(--accent); }
   box-shadow: 0 8px 24px rgba(35, 49, 61, .06);
 }
 .series-tab {
-  position: relative; appearance: none; min-height: 68px; border: 1px solid transparent;
-  border-radius: 8px; background: transparent; color: #4c5154; cursor: pointer;
-  font: inherit; font-size: 14px; font-weight: 600; letter-spacing: .35px; text-align: left;
-  padding: 14px 18px 14px 56px; transition: background .2s, border-color .2s, box-shadow .2s, color .2s, transform .2s;
+  appearance: none; min-height: 68px; border: 1px solid transparent; border-radius: 8px;
+  background: transparent; color: #4c5154; cursor: pointer; font: inherit; font-size: 13px;
+  font-weight: 700; letter-spacing: .65px; padding: 14px 22px; text-align: center; text-transform: uppercase;
+  transition: background .2s, border-color .2s, box-shadow .2s, color .2s, transform .2s;
 }
-.series-tab::before {
-  position: absolute; left: 18px; top: 50%; width: 25px; height: 25px;
-  border: 1px solid currentColor; border-radius: 50%; content: "01"; line-height: 23px;
-  font-size: 10px; font-weight: 700; letter-spacing: 0; text-align: center; transform: translateY(-50%);
-}
-.series-tab:nth-child(2)::before { content: "02"; }
 .series-tab:hover { background: rgba(255, 255, 255, .75); color: #23313d; }
 .series-tab[aria-selected="true"] {
   background: #23313d; border-color: #23313d; box-shadow: 0 6px 14px rgba(35, 49, 61, .2); color: #fff;
 }
-.series-tab[aria-selected="true"]::before { border-color: var(--accent); color: var(--accent); }
 .series-tab[aria-selected="true"]:hover { background: #2d3e4b; transform: translateY(-1px); }
 .series-tab:focus-visible { outline: 3px solid rgba(176, 141, 87, .6); outline-offset: 2px; }
 .uniform-series { margin: 0 0 64px; }
@@ -227,6 +235,9 @@ nav a[aria-current="page"] { color: var(--accent); }
 .site-footer { border-top: 1px solid var(--line); padding: 28px 0; font-size: 13px; color: var(--muted); }
 
 @media (max-width: 640px) {
+  .uniforms-page .section h1, .catalog-page .section h1 { font-size: 38px; }
+  .uniforms-page .series-head h3 { font-size: 29px; }
+  .uniforms-page .collection-head h4, .catalog-page .ose-category-head h2 { font-size: 25px; }
   .hero {
     min-height: 690px;
     padding: 82px 0 64px;
