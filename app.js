@@ -62,28 +62,98 @@
     parent.appendChild(row);
   };
 
-  uniformSeries.forEach((series) => {
-    const seriesCollections = collections
-      .filter((collection) => collection.series === series.id)
-      .map((collection) => ({
-        collection,
-        items: liveProducts.filter((p) => p.collection === collection.id),
-      }))
-      .filter((group) => group.items.length);
+  const populatedSeries = uniformSeries
+    .map((series) => ({
+      series,
+      collections: collections
+        .filter((collection) => collection.series === series.id)
+        .map((collection) => ({
+          collection,
+          items: liveProducts.filter((p) => p.collection === collection.id),
+        }))
+        .filter((group) => group.items.length),
+    }))
+    .filter((group) => group.collections.length);
 
-    if (!seriesCollections.length) return;
-
-    const section = document.createElement("section");
-    section.className = "uniform-series";
-    section.innerHTML = `<div class="series-head"><h3>${series.title}</h3>` +
-      (series.blurb ? `<p>${series.blurb}</p>` : "") + "</div>";
-
-    seriesCollections.forEach(({ collection, items }) => {
-      renderedCollectionIds.add(collection.id);
-      appendCollection(section, collection, items);
+  const tabs = [];
+  const panels = [];
+  const activateSeries = (seriesId, moveFocus = false) => {
+    tabs.forEach(({ id, button }) => {
+      const active = id === seriesId;
+      button.setAttribute("aria-selected", String(active));
+      button.tabIndex = active ? 0 : -1;
+      if (active && moveFocus) button.focus();
     });
-    grid.appendChild(section);
-  });
+    panels.forEach(({ id, panel }) => {
+      panel.hidden = id !== seriesId;
+    });
+  };
+
+  if (populatedSeries.length > 1) {
+    const switcher = document.createElement("div");
+    switcher.className = "series-switcher";
+    switcher.setAttribute("role", "tablist");
+    switcher.setAttribute("aria-label", "Uniform series");
+    grid.appendChild(switcher);
+
+    populatedSeries.forEach(({ series, collections: seriesCollections }, index) => {
+      const tabId = `uniform-series-tab-${series.id}`;
+      const panelId = `uniform-series-panel-${series.id}`;
+      const button = document.createElement("button");
+      button.className = "series-tab";
+      button.type = "button";
+      button.id = tabId;
+      button.setAttribute("role", "tab");
+      button.setAttribute("aria-controls", panelId);
+      button.textContent = series.title;
+      button.addEventListener("click", () => activateSeries(series.id));
+      switcher.appendChild(button);
+      tabs.push({ id: series.id, button });
+
+      const section = document.createElement("section");
+      section.className = "uniform-series";
+      section.id = panelId;
+      section.setAttribute("role", "tabpanel");
+      section.setAttribute("aria-labelledby", tabId);
+      section.hidden = index !== 0;
+      section.innerHTML = `<div class="series-head"><h3>${series.title}</h3>` +
+        (series.blurb ? `<p>${series.blurb}</p>` : "") + "</div>";
+
+      seriesCollections.forEach(({ collection, items }) => {
+        renderedCollectionIds.add(collection.id);
+        appendCollection(section, collection, items);
+      });
+      grid.appendChild(section);
+      panels.push({ id: series.id, panel: section });
+    });
+
+    tabs.forEach(({ id, button }, index) => {
+      button.addEventListener("keydown", (event) => {
+        const keys = ["ArrowLeft", "ArrowRight", "Home", "End"];
+        if (!keys.includes(event.key)) return;
+        event.preventDefault();
+        let nextIndex = index;
+        if (event.key === "ArrowLeft") nextIndex = (index - 1 + tabs.length) % tabs.length;
+        if (event.key === "ArrowRight") nextIndex = (index + 1) % tabs.length;
+        if (event.key === "Home") nextIndex = 0;
+        if (event.key === "End") nextIndex = tabs.length - 1;
+        activateSeries(tabs[nextIndex].id, true);
+      });
+    });
+    activateSeries(populatedSeries[0].series.id);
+  } else {
+    populatedSeries.forEach(({ series, collections: seriesCollections }) => {
+      const section = document.createElement("section");
+      section.className = "uniform-series";
+      section.innerHTML = `<div class="series-head"><h3>${series.title}</h3>` +
+        (series.blurb ? `<p>${series.blurb}</p>` : "") + "</div>";
+      seriesCollections.forEach(({ collection, items }) => {
+        renderedCollectionIds.add(collection.id);
+        appendCollection(section, collection, items);
+      });
+      grid.appendChild(section);
+    });
+  }
 
   // Keep any future collections without a series visible instead of hiding them.
   collections.forEach((collection) => {
