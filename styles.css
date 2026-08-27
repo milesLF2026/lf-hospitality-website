@@ -190,7 +190,7 @@ nav a[aria-current="page"] { color: var(--accent); }
 .contact-brand-block, .contact-navigation, .contact-details { min-width: 0; }
 .contact-navigation, .contact-details { border-left: 1px solid rgba(255,255,255,.2); padding-left: 48px; }
 .contact-brand-lockup { display: flex; align-items: center; gap: 13px; margin-bottom: 22px; }
-.contact-brand-lockup img { width: 146px; height: auto; filter: brightness(0) invert(1); }
+.contact-brand-lockup img { width: 168px; height: auto; padding: 8px 10px; background: #fff; border-radius: 3px; box-shadow: 0 5px 14px rgba(0,0,0,.16); }
 .contact-brand-lockup span { color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: 2.2px; }
 .contact-brand-block > p { max-width: 400px; color: rgba(255,255,255,.72); font-size: 15px; line-height: 1.75; }
 .contact-label { color: var(--accent); font-size: 11px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; }
