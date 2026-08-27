@@ -91,6 +91,22 @@ const CATALOG = {
     },
   ],
 
+  /* -------- UNIFORM SERIES -----------------------------------
+     Each Case collection belongs to one series below.
+     ------------------------------------------------------------ */
+  uniformSeries: [
+    {
+      id: "readymade",
+      title: "Readymade Uniform",
+      blurb: "Ready-to-order uniform styles for polished, professional hotel teams.",
+    },
+    {
+      id: "customize",
+      title: "Customize Uniform",
+      blurb: "Custom-designed uniform collections tailored to each venue, service concept and brand.",
+    },
+  ],
+
   /* -------- COLLECTIONS (uniform cases) ---------------------
      Each collection groups products under its own header.
      To add a case: copy a block, give it a new "id", and set
@@ -99,31 +115,37 @@ const CATALOG = {
   collections: [
     {
       id: "case1",
+      series: "readymade",
       title: "Front House Collection",
       blurb: "Tailored suits and blazers for front desk, casino floor and premium F&B service teams.",
     },
     {
       id: "case2",
+      series: "customize",
       title: "Chinese Restaurant Collection",
       blurb: "Modern oriental silhouettes with bold color blocking — designed for signature Chinese dining venues.",
     },
     {
       id: "case3",
+      series: "customize",
       title: "All-Day Dining Service Collection",
       blurb: "Warm earth-tone service sets with aprons for restaurants, cafés and banquet service.",
     },
     {
       id: "case5",
+      series: "customize",
       title: "Resort & Leisure Service Collection",
       blurb: "Polished, relaxed uniforms for resort reception, golf, poolside and casual dining service.",
     },
     {
       id: "case6",
+      series: "customize",
       title: "Japanese Restaurant Collection",
       blurb: "Sophisticated host and hostess uniforms created for premium restaurants and destination dining venues.",
     },
     {
       id: "case7",
+      series: "customize",
       title: "Nightlife & Lounge Collection",
       blurb: "Statement looks for luxury lounges, clubs, cocktail bars and evening guest experiences.",
     },

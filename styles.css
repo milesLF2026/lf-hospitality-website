@@ -104,9 +104,14 @@ nav a:hover { color: var(--accent); }
   display: grid; gap: 28px; margin-bottom: 40px;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 }
-.collection-head { margin: 44px 0 20px; }
-.collection-head:first-child { margin-top: 0; }
-.collection-head h3 { font-size: 22px; font-weight: 600; }
+.uniform-series { margin: 56px 0 64px; }
+.uniform-series:first-child { margin-top: 0; }
+.series-head { border-bottom: 1px solid var(--line); margin-bottom: 30px; padding-bottom: 16px; }
+.series-head h3 { font-size: 26px; font-weight: 600; }
+.series-head p { font-size: 14px; color: var(--muted); margin-top: 6px; }
+.collection-head { margin: 38px 0 20px; }
+.collection-head:first-of-type { margin-top: 0; }
+.collection-head h4 { font-size: 22px; font-weight: 600; }
 .collection-head p { font-size: 14px; color: var(--muted); margin-top: 6px; }
 .card {
   background: #fff; border: 1px solid var(--line); border-radius: 4px;

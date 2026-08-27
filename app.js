@@ -26,16 +26,9 @@
     ? ""
     : "<p class='empty'>Products coming soon.</p>";
 
-  // Group products by collection (if any) and render each group
-  // under its own header; products without a collection go last.
-  const cols = CATALOG.collections || [];
-  const groups = [];
-  cols.forEach((c) => {
-    const items = liveProducts.filter((p) => p.collection === c.id);
-    if (items.length) groups.push({ title: c.title, blurb: c.blurb, items });
-  });
-  const rest = liveProducts.filter((p) => !p.collection);
-  if (rest.length) groups.push({ title: null, blurb: null, items: rest });
+  // Group uniform products into their series, then by Case collection.
+  const collections = CATALOG.collections || [];
+  const uniformSeries = CATALOG.uniformSeries || [];
 
   const renderCard = (p) => {
     const card = document.createElement("article");
@@ -53,19 +46,54 @@
     return card;
   };
 
-  groups.forEach((g) => {
-    if (g.title) {
+  const renderedCollectionIds = new Set();
+
+  const appendCollection = (parent, collection, items) => {
+    if (collection) {
       const head = document.createElement("div");
       head.className = "collection-head";
-      head.innerHTML = `<h3>${g.title}</h3>` +
-        (g.blurb ? `<p>${g.blurb}</p>` : "");
-      grid.appendChild(head);
+      head.innerHTML = `<h4>${collection.title}</h4>` +
+        (collection.blurb ? `<p>${collection.blurb}</p>` : "");
+      parent.appendChild(head);
     }
     const row = document.createElement("div");
     row.className = "product-row";
-    g.items.forEach((p) => row.appendChild(renderCard(p)));
-    grid.appendChild(row);
+    items.forEach((p) => row.appendChild(renderCard(p)));
+    parent.appendChild(row);
+  };
+
+  uniformSeries.forEach((series) => {
+    const seriesCollections = collections
+      .filter((collection) => collection.series === series.id)
+      .map((collection) => ({
+        collection,
+        items: liveProducts.filter((p) => p.collection === collection.id),
+      }))
+      .filter((group) => group.items.length);
+
+    if (!seriesCollections.length) return;
+
+    const section = document.createElement("section");
+    section.className = "uniform-series";
+    section.innerHTML = `<div class="series-head"><h3>${series.title}</h3>` +
+      (series.blurb ? `<p>${series.blurb}</p>` : "") + "</div>";
+
+    seriesCollections.forEach(({ collection, items }) => {
+      renderedCollectionIds.add(collection.id);
+      appendCollection(section, collection, items);
+    });
+    grid.appendChild(section);
   });
+
+  // Keep any future collections without a series visible instead of hiding them.
+  collections.forEach((collection) => {
+    if (renderedCollectionIds.has(collection.id)) return;
+    const items = liveProducts.filter((p) => p.collection === collection.id);
+    if (items.length) appendCollection(grid, collection, items);
+  });
+
+  const rest = liveProducts.filter((p) => !p.collection);
+  if (rest.length) appendCollection(grid, null, rest);
 
   // Category directory
   const catGrid = document.getElementById("category-grid");
