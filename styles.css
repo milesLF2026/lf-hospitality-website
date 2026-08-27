@@ -100,7 +100,8 @@ nav a:hover { color: var(--accent); }
 /* Sections */
 .section { padding: 90px 0; }
 .section.alt { background: var(--bg-alt); }
-.section h2 { font-size: 32px; font-weight: 400; letter-spacing: 1px; }
+.section h1, .section h2 { font-size: 32px; font-weight: 400; letter-spacing: 1px; }
+nav a[aria-current="page"] { color: var(--accent); }
 .section-sub { color: var(--muted); margin: 12px 0 40px; max-width: 680px; }
 
 /* Product grid */

@@ -3,30 +3,38 @@
 (function () {
   const { company, categories, products } = CATALOG;
 
-  // Hero & contact
-  document.getElementById("hero-tagline").textContent = company.tagline;
-  document.getElementById("hero-intro").textContent = company.intro;
+  // Render only the shared elements that exist on the current page.
+  const heroTagline = document.getElementById("hero-tagline");
+  const heroIntro = document.getElementById("hero-intro");
+  if (heroTagline) heroTagline.textContent = company.tagline;
+  if (heroIntro) heroIntro.textContent = company.intro;
+
   const mail = document.getElementById("contact-email");
-  const emails = company.emails || [company.email];
-  emails.forEach((email, index) => {
-    if (index > 0) mail.appendChild(document.createTextNode(" / "));
-    const link = document.createElement("a");
-    link.textContent = email;
-    link.href = "mailto:" + email;
-    mail.appendChild(link);
-  });
-  document.getElementById("year").textContent = new Date().getFullYear();
+  if (mail) {
+    const emails = company.emails || [company.email];
+    emails.forEach((email, index) => {
+      if (index > 0) mail.appendChild(document.createTextNode(" / "));
+      const link = document.createElement("a");
+      link.textContent = email;
+      link.href = "mailto:" + email;
+      mail.appendChild(link);
+    });
+  }
+
+  const year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
 
   // Products for live categories
   const liveNames = categories.filter((c) => c.live).map((c) => c.en);
   const liveProducts = products.filter((p) => liveNames.includes(p.category));
 
   const grid = document.getElementById("product-grid");
-  grid.innerHTML = liveProducts.length
-    ? ""
-    : "<p class='empty'>Products coming soon.</p>";
+  if (grid) {
+    grid.innerHTML = liveProducts.length
+      ? ""
+      : "<p class='empty'>Products coming soon.</p>";
 
-  // Group uniform products into their series, then by Case collection.
+    // Group uniform products into their series, then by Case collection.
   const collections = CATALOG.collections || [];
   const uniformSeries = CATALOG.uniformSeries || [];
 
@@ -162,31 +170,35 @@
     if (items.length) appendCollection(grid, collection, items);
   });
 
-  const rest = liveProducts.filter((p) => !p.collection);
-  if (rest.length) appendCollection(grid, null, rest);
+    const rest = liveProducts.filter((p) => !p.collection);
+    if (rest.length) appendCollection(grid, null, rest);
+  }
 
-  // Category directory
+  // Category directory (OS&E Catalog page)
   const catGrid = document.getElementById("category-grid");
-  categories
-    .filter((c) => !c.live)
-    .forEach((c) => {
-      const el = document.createElement("div");
-      el.className = "cat-card";
-      el.innerHTML = `
-        <div class="cat-img">
-          <img src="${c.image || ""}" alt="${c.en}"
-               onerror="this.parentNode.remove();" />
-        </div>
-        <h3>${c.en}</h3>
-        <p>${c.blurb || ""}</p>
-        <ul>${c.subs.map((s) => `<li>${s}</li>`).join("")}</ul>
-        <span class="badge">Coming soon</span>`;
-      catGrid.appendChild(el);
-    });
+  if (catGrid) {
+    categories
+      .filter((c) => !c.live)
+      .forEach((c) => {
+        const el = document.createElement("div");
+        el.className = "cat-card";
+        el.innerHTML = `
+          <div class="cat-img">
+            <img src="${c.image || ""}" alt="${c.en}"
+                 onerror="this.parentNode.remove();" />
+          </div>
+          <h3>${c.en}</h3>
+          <p>${c.blurb || ""}</p>
+          <ul>${c.subs.map((s) => `<li>${s}</li>`).join("")}</ul>
+          <span class="badge">Coming soon</span>`;
+        catGrid.appendChild(el);
+      });
+  }
 })();
 
 function openModal(p) {
   const m = document.getElementById("modal");
+  if (!m) return;
   const img = document.getElementById("m-img");
   img.src = p.image;
   img.alt = p.name;
@@ -201,12 +213,16 @@ function openModal(p) {
 }
 
 function closeModal() {
-  document.getElementById("modal").hidden = true;
+  const modal = document.getElementById("modal");
+  if (modal) modal.hidden = true;
 }
 
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") closeModal();
-});
-document.getElementById("modal").addEventListener("click", (e) => {
-  if (e.target.id === "modal") closeModal();
-});
+const modal = document.getElementById("modal");
+if (modal) {
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
+  });
+  modal.addEventListener("click", (e) => {
+    if (e.target.id === "modal") closeModal();
+  });
+}
