@@ -45,48 +45,28 @@ nav a:hover { color: var(--accent); }
 
 /* Hero */
 .hero {
-  padding: 110px 0 90px;
-  min-height: 640px;
+  min-height: 690px; padding: 96px 0;
   background-image: url("images/hero/resort-hotel-hero.jpg");
-  background-size: cover;
-  background-position: center 52%;
+  background-position: center 52%; background-size: cover;
 }
-.hero .wrap {
-  min-height: 440px;
-  display: flex;
-  align-items: center;
-}
+.hero .wrap { display: flex; align-items: center; min-height: 498px; }
+.home-page { font-family: "Manrope", "Helvetica Neue", Arial, sans-serif; }
 .hero-content {
-  max-width: 670px;
-  padding: 36px 44px 40px;
-  background: rgba(255, 252, 247, .89);
-  border: 1px solid rgba(255, 255, 255, .88);
-  border-left: 4px solid var(--accent);
-  box-shadow: 0 20px 48px rgba(25, 32, 38, .18);
-  backdrop-filter: blur(8px);
+  max-width: 716px; padding: 46px 48px 48px; position: relative;
+  background: rgba(255, 252, 247, .91); border: 1px solid rgba(255, 255, 255, .9);
+  border-left: 4px solid var(--accent); border-radius: 3px;
+  box-shadow: 0 24px 56px rgba(25, 32, 38, .2); backdrop-filter: blur(10px);
 }
 .hero-kicker {
-  display: block;
-  margin-bottom: 17px;
-  color: var(--accent);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  line-height: 1.4;
+  display: block; margin-bottom: 18px; color: var(--accent); font-size: 10px;
+  font-weight: 700; letter-spacing: 3.2px; line-height: 1.4; text-transform: uppercase;
 }
-.hero h1 {
-  color: #23313d;
-  font-size: 48px;
-  font-weight: 500;
-  line-height: 1.16;
-  letter-spacing: .1px;
-  max-width: 600px;
+.home-page .hero h1 {
+  max-width: 650px; color: #23313d; font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(48px, 5vw, 60px); font-weight: 600; letter-spacing: -.35px; line-height: 1.04;
 }
-.hero p {
-  margin-top: 20px;
-  max-width: 610px;
-  color: #4f5b61;
-  font-size: 17px;
+.home-page .hero p {
+  max-width: 625px; margin-top: 22px; color: #4f5b61; font-size: 16px; line-height: 1.82;
 }
 .hero-actions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 34px; max-width: 640px; }
 .btn {
@@ -103,7 +83,7 @@ nav a:hover { color: var(--accent); }
 .section h1, .section h2 { font-size: 32px; font-weight: 400; letter-spacing: 1px; }
 nav a[aria-current="page"] { color: var(--accent); }
 
-/* Page-specific editorial typography for the Uniforms and OS&E Catalog pages. */
+/* Page-specific editorial typography for the catalog pages. */
 .uniforms-page, .catalog-page, .ffe-page { font-family: "Manrope", "Helvetica Neue", Arial, sans-serif; }
 .uniforms-page .section h1, .catalog-page .section h1, .ffe-page .section h1,
 .uniforms-page .series-head h3, .uniforms-page .collection-head h4,
@@ -264,16 +244,12 @@ nav a[aria-current="page"] { color: var(--accent); }
   .uniforms-page .section h1, .catalog-page .section h1, .ffe-page .section h1 { font-size: 38px; }
   .uniforms-page .series-head h3 { font-size: 29px; }
   .uniforms-page .collection-head h4, .catalog-page .ose-category-head h2 { font-size: 25px; }
-  .hero {
-    min-height: 690px;
-    padding: 82px 0 64px;
-    background-position: 58% center;
-  }
+  .hero { min-height: 690px; padding: 82px 0 64px; background-position: 58% center; }
   .hero .wrap { min-height: 544px; }
-  .hero-content { padding: 29px 24px 31px; }
+  .hero-content { padding: 34px 26px 36px; }
   .hero-kicker { margin-bottom: 14px; font-size: 10px; letter-spacing: 2.4px; }
-  .hero h1 { font-size: 34px; }
-  .hero p { font-size: 16px; }
+  .home-page .hero h1 { font-size: 43px; }
+  .home-page .hero p { font-size: 15px; line-height: 1.76; }
   .hero-actions { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 28px; }
   .hero-actions > .btn { display: block; padding: 13px 18px; }
   nav a { margin-left: 16px; }
