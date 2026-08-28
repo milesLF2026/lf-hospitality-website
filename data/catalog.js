@@ -149,7 +149,7 @@ const CATALOG = {
     },
     {
       id: "case5",
-      series: "customize",
+      series: "readymade",
       title: "Resort & Leisure Service Collection",
       blurb: "Polished, relaxed uniforms for resort reception, golf, poolside and casual dining service.",
     },
