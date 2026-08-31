@@ -12,11 +12,19 @@
   const normalizeQuantity = (value) => Math.max(1, Math.round(Number(value) || 1));
   const readymadeId = (productName) => `readymade-${encodeURIComponent(productName)}`;
 
+  function normalizeCart(cart) {
+    return Array.isArray(cart) ? cart.map((item) => {
+      if (item.type === "customize") return { ...item, moq: "50 pcs" };
+      if (item.type === "ffe-project") return { ...item, moq: "" };
+      return item;
+    }) : [];
+  }
+
   function getCart() {
     try {
-      return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+      return normalizeCart(JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"));
     } catch (_) {
-      return memoryCart;
+      return normalizeCart(memoryCart);
     }
   }
 
@@ -122,7 +130,7 @@
     cart.forEach((item, index) => {
       lines.push(`${index + 1}. ${item.name}${item.detail ? ` — ${item.detail}` : ""}`);
       if (item.type !== "ffe-project") lines.push(`   Quantity: ${item.quantity}`);
-      lines.push(`   MOQ: ${item.moq}`);
+      if (item.type !== "ffe-project") lines.push(`   MOQ: ${item.moq}`);
       lines.push(`   ${item.type === "ffe-project" ? "Requested delivery" : "Lead time"}: ${item.leadTime}`);
       if (item.notes.trim()) lines.push(`   Notes: ${item.notes.replace(/\n/g, "; ")}`);
       lines.push("");
@@ -165,7 +173,7 @@
           <div><h3>${escapeHtml(item.name)}</h3>${item.detail ? `<p>${escapeHtml(item.detail)}</p>` : ""}</div>
           <button type="button" class="rfq-remove" data-rfq-action="remove" data-rfq-id="${escapeHtml(item.id)}" aria-label="Remove ${escapeHtml(item.name)}">Remove</button>
         </div>
-        <div class="rfq-meta"><span>MOQ: ${escapeHtml(item.moq)}</span><span>${item.type === "ffe-project" ? "Requested delivery" : "Lead time"}: ${escapeHtml(item.leadTime)}</span></div>
+        <div class="rfq-meta">${item.type !== "ffe-project" ? `<span>MOQ: ${escapeHtml(item.moq)}</span>` : ""}<span>${item.type === "ffe-project" ? "Requested delivery" : "Lead time"}: ${escapeHtml(item.leadTime)}</span></div>
         ${item.type !== "ffe-project" ? `<label class="rfq-field">Quantity
           <span class="rfq-quantity-control">
             <button type="button" data-rfq-action="decrease" data-rfq-id="${escapeHtml(item.id)}" aria-label="Decrease quantity">−</button>
@@ -246,7 +254,7 @@
         name: "Customize Uniform",
         detail: "Custom uniform inquiry",
         quantity: normalizeQuantity(data.get("quantity")),
-        moq: "To be confirmed",
+        moq: "50 pcs",
         leadTime: "To be confirmed",
         notes,
       });
@@ -272,7 +280,7 @@
         projectIntroduction: introduction,
         additionalRequirements,
         quantity: 1,
-        moq: "To be confirmed",
+        moq: "",
         leadTime: String(data.get("deliveryTimeline") || "").trim(),
         notes,
       }, true);
