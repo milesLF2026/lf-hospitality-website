@@ -480,7 +480,7 @@ const CATALOG = {
       collection: "housekeeping",
       image: "images/uniform/housekeeping/housekeeping-01.jpg",
       description: "Ready-to-wear housekeeping uniform for guestroom care and public-area teams.",
-      specs: { Collection: "Readymade Uniform", Availability: "Standard styles and sizes" },
+      specs: { Availability: "Standard styles and sizes", MOQ: "50 pcs" },
     },
     {
       name: "Housekeeping Uniform 02",
@@ -488,7 +488,7 @@ const CATALOG = {
       collection: "housekeeping",
       image: "images/uniform/housekeeping/housekeeping-02.jpg",
       description: "Ready-to-wear housekeeping uniform for guestroom care and public-area teams.",
-      specs: { Collection: "Readymade Uniform", Availability: "Standard styles and sizes" },
+      specs: { Availability: "Standard styles and sizes", MOQ: "50 pcs" },
     },
     {
       name: "Housekeeping Uniform 03",
@@ -496,7 +496,7 @@ const CATALOG = {
       collection: "housekeeping",
       image: "images/uniform/housekeeping/housekeeping-03.jpg",
       description: "Ready-to-wear housekeeping uniform for guestroom care and public-area teams.",
-      specs: { Collection: "Readymade Uniform", Availability: "Standard styles and sizes" },
+      specs: { Availability: "Standard styles and sizes", MOQ: "50 pcs" },
     },
     {
       name: "Housekeeping Uniform 04",
@@ -504,7 +504,7 @@ const CATALOG = {
       collection: "housekeeping",
       image: "images/uniform/housekeeping/housekeeping-04.jpg",
       description: "Ready-to-wear housekeeping uniform for guestroom care and public-area teams.",
-      specs: { Collection: "Readymade Uniform", Availability: "Standard styles and sizes" },
+      specs: { Availability: "Standard styles and sizes", MOQ: "50 pcs" },
     },
     {
       name: "Housekeeping Uniform 05",
@@ -512,7 +512,7 @@ const CATALOG = {
       collection: "housekeeping",
       image: "images/uniform/housekeeping/housekeeping-05.jpg",
       description: "Ready-to-wear housekeeping uniform for guestroom care and public-area teams.",
-      specs: { Collection: "Readymade Uniform", Availability: "Standard styles and sizes" },
+      specs: { Availability: "Standard styles and sizes", MOQ: "50 pcs" },
     },
     {
       name: "Housekeeping Uniform 06",
@@ -520,7 +520,7 @@ const CATALOG = {
       collection: "housekeeping",
       image: "images/uniform/housekeeping/housekeeping-06.jpg",
       description: "Ready-to-wear housekeeping uniform for guestroom care and public-area teams.",
-      specs: { Collection: "Readymade Uniform", Availability: "Standard styles and sizes" },
+      specs: { Availability: "Standard styles and sizes", MOQ: "50 pcs" },
     },
     {
       name: "Restaurant Uniform 01",
@@ -528,7 +528,7 @@ const CATALOG = {
       collection: "restaurant",
       image: "images/uniform/restaurant/restaurant-01.jpg",
       description: "Ready-to-wear restaurant service uniform for polished front-of-house presentation.",
-      specs: { Collection: "Readymade Uniform", Availability: "Standard styles and sizes" },
+      specs: { Availability: "Standard styles and sizes", MOQ: "50 pcs" },
     },
     {
       name: "Restaurant Uniform 02",
@@ -536,7 +536,7 @@ const CATALOG = {
       collection: "restaurant",
       image: "images/uniform/restaurant/restaurant-02.jpg",
       description: "Ready-to-wear restaurant service uniform for polished front-of-house presentation.",
-      specs: { Collection: "Readymade Uniform", Availability: "Standard styles and sizes" },
+      specs: { Availability: "Standard styles and sizes", MOQ: "50 pcs" },
     },
     {
       name: "Restaurant Uniform 03",
@@ -544,7 +544,7 @@ const CATALOG = {
       collection: "restaurant",
       image: "images/uniform/restaurant/restaurant-03.jpg",
       description: "Ready-to-wear restaurant service uniform for polished front-of-house presentation.",
-      specs: { Collection: "Readymade Uniform", Availability: "Standard styles and sizes" },
+      specs: { Availability: "Standard styles and sizes", MOQ: "50 pcs" },
     },
     {
       name: "Restaurant Uniform 04",
@@ -552,7 +552,7 @@ const CATALOG = {
       collection: "restaurant",
       image: "images/uniform/restaurant/restaurant-04.jpg",
       description: "Ready-to-wear restaurant service uniform for polished front-of-house presentation.",
-      specs: { Collection: "Readymade Uniform", Availability: "Standard styles and sizes" },
+      specs: { Availability: "Standard styles and sizes", MOQ: "50 pcs" },
     },
     {
       name: "Restaurant Uniform 05",
@@ -560,7 +560,7 @@ const CATALOG = {
       collection: "restaurant",
       image: "images/uniform/restaurant/restaurant-05.jpg",
       description: "Ready-to-wear restaurant service uniform for polished front-of-house presentation.",
-      specs: { Collection: "Readymade Uniform", Availability: "Standard styles and sizes" },
+      specs: { Availability: "Standard styles and sizes", MOQ: "50 pcs" },
     },
     {
       name: "Restaurant Uniform 06",
@@ -568,7 +568,7 @@ const CATALOG = {
       collection: "restaurant",
       image: "images/uniform/restaurant/restaurant-06.jpg",
       description: "Ready-to-wear restaurant service uniform for polished front-of-house presentation.",
-      specs: { Collection: "Readymade Uniform", Availability: "Standard styles and sizes" },
+      specs: { Availability: "Standard styles and sizes", MOQ: "50 pcs" },
     },
   ],
 };
