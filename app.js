@@ -32,24 +32,27 @@
     grid.innerHTML = "";
 
     // Group uniform products into their series, then by Case collection.
-  const collections = CATALOG.collections || [];
-  const uniformSeries = CATALOG.uniformSeries || [];
+    const collections = CATALOG.collections || [];
+    const uniformSeries = CATALOG.uniformSeries || [];
+    const collectionById = new Map(collections.map((collection) => [collection.id, collection]));
 
-  const renderCard = (p) => {
-    const card = document.createElement("article");
-    card.className = "card";
-    card.innerHTML = `
-      <div class="card-img">
-        <img src="${p.image}" alt="${p.name}"
-             onerror="this.parentNode.classList.add('no-img');this.remove();" />
-      </div>
-      <div class="card-body">
-        <h3>${p.name}</h3>
-        <p>${p.description || ""}</p>
-      </div>`;
-    card.onclick = () => openModal(p);
-    return card;
-  };
+    const renderCard = (p) => {
+      const card = document.createElement("article");
+      const isReadymade = collectionById.get(p.collection)?.series === "readymade";
+      card.className = "card";
+      card.innerHTML = `
+        <div class="card-img">
+          <img src="${p.image}" alt="${p.name}"
+               onerror="this.parentNode.classList.add('no-img');this.remove();" />
+        </div>
+        <div class="card-body">
+          <h3>${p.name}</h3>
+          <p>${p.description || ""}</p>
+          ${isReadymade ? `<button class="rfq-add-button rfq-card-button" type="button" data-rfq-add data-rfq-type="readymade" data-rfq-product="${p.name}">+ Add to RFQ</button>` : ""}
+        </div>`;
+      card.onclick = () => openModal(p);
+      return card;
+    };
 
   const renderedCollectionIds = new Set();
 
@@ -121,8 +124,10 @@
       section.setAttribute("role", "tabpanel");
       section.setAttribute("aria-labelledby", tabId);
       section.hidden = index !== 0;
-      section.innerHTML = `<div class="series-head"><h3>${series.title}</h3>` +
-        (series.blurb ? `<p>${series.blurb}</p>` : "") + "</div>";
+      section.innerHTML = `<div class="series-head"><div><h3>${series.title}</h3>` +
+        (series.blurb ? `<p>${series.blurb}</p>` : "") + "</div>" +
+        (series.id === "customize" ? `<button class="rfq-add-button" type="button" data-rfq-action="custom-uniform">Start a Custom Inquiry</button>` : "") +
+        "</div>";
 
       seriesCollections.forEach(({ collection, items }) => {
         renderedCollectionIds.add(collection.id);
@@ -150,8 +155,10 @@
     populatedSeries.forEach(({ series, collections: seriesCollections }) => {
       const section = document.createElement("section");
       section.className = "uniform-series";
-      section.innerHTML = `<div class="series-head"><h3>${series.title}</h3>` +
-        (series.blurb ? `<p>${series.blurb}</p>` : "") + "</div>";
+      section.innerHTML = `<div class="series-head"><div><h3>${series.title}</h3>` +
+        (series.blurb ? `<p>${series.blurb}</p>` : "") + "</div>" +
+        (series.id === "customize" ? `<button class="rfq-add-button" type="button" data-rfq-action="custom-uniform">Start a Custom Inquiry</button>` : "") +
+        "</div>";
       seriesCollections.forEach(({ collection, items }) => {
         renderedCollectionIds.add(collection.id);
         appendCollection(section, collection, items);
@@ -189,17 +196,23 @@
           const image = typeof sub === "string" ? "" : sub.image;
           const card = document.createElement("article");
           card.className = "ose-subcategory-card";
+          const rfqId = `ose-${category.en}-${name}`;
           card.innerHTML = `
             <div class="ose-subcategory-image">
               <img src="${image}" alt="${name}" loading="lazy" />
             </div>
-            <h3>${name}</h3>`;
+            <div class="ose-subcategory-body">
+              <h3>${name}</h3>
+              <button class="rfq-add-button" type="button" data-rfq-add data-rfq-type="ose" data-rfq-id="${rfqId}" data-rfq-name="${name}" data-rfq-detail="${category.en}">+ Add to RFQ</button>
+            </div>`;
           subGrid.appendChild(card);
         });
         section.appendChild(subGrid);
         catGrid.appendChild(section);
       });
   }
+
+  window.RFQ?.refresh();
 })();
 
 function openModal(p) {
@@ -215,6 +228,7 @@ function openModal(p) {
   document.getElementById("m-specs").innerHTML = Object.entries(p.specs || {})
     .map(([k, v]) => `<tr><th>${k}</th><td>${v}</td></tr>`)
     .join("");
+  window.RFQ?.renderProductForm(p);
   m.hidden = false;
 }
 

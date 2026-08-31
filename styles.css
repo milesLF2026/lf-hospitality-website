@@ -255,3 +255,91 @@ nav a[aria-current="page"] { color: var(--accent); }
   .hero-actions > .btn { display: block; padding: 13px 18px; }
   nav a { margin-left: 16px; }
 }
+
+/* RFQ list */
+.site-header nav { display: flex; align-items: center; }
+.rfq-nav-button, .rfq-float-button, .rfq-add-button, .rfq-remove, .rfq-quantity-control button, .rfq-email-button, .rfq-form-submit {
+  font: inherit; cursor: pointer;
+}
+.rfq-nav-button {
+  margin-left: 24px; padding: 8px 11px; border: 1px solid #23313d; border-radius: 2px;
+  background: #23313d; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .35px; white-space: nowrap;
+}
+.rfq-nav-button span, .rfq-float-button span { display: inline-grid; width: 19px; height: 19px; margin-left: 5px; place-items: center; border-radius: 50%; background: var(--accent); color: #fff; font-size: 10px; }
+.rfq-add-button {
+  border: 1px solid #23313d; border-radius: 2px; background: transparent; color: #23313d;
+  padding: 9px 13px; font-size: 11px; font-weight: 700; letter-spacing: .55px; text-transform: uppercase;
+  transition: background .2s, border-color .2s, color .2s;
+}
+.rfq-add-button:hover { background: #23313d; color: #fff; }
+.rfq-add-button:disabled, .rfq-add-button.is-added { border-color: #8d9a95; background: #eef2ef; color: #59665f; cursor: default; }
+.rfq-card-button { margin-top: 16px; }
+.series-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+.series-head > div { min-width: 0; }
+.series-head .rfq-add-button { flex: 0 0 auto; margin-top: 2px; }
+.ose-subcategory-body { padding: 16px 18px 18px; }
+.ose-subcategory-card h3 { padding: 0; }
+.ose-subcategory-body .rfq-add-button { margin-top: 13px; }
+.ffe-scene-copy .rfq-add-button { margin-top: 22px; }
+
+.rfq-float-button {
+  position: fixed; right: 24px; bottom: 24px; z-index: 31; border: 0; border-radius: 999px;
+  background: #23313d; box-shadow: 0 10px 28px rgba(35,49,61,.28); color: #fff; padding: 12px 17px;
+  font-size: 12px; font-weight: 700; letter-spacing: .7px; transition: background .2s, transform .2s;
+}
+.rfq-float-button:hover { background: var(--accent); transform: translateY(-2px); }
+.rfq-overlay { position: fixed; inset: 0; z-index: 38; background: rgba(16,24,29,.38); opacity: 0; pointer-events: none; transition: opacity .25s; }
+.rfq-overlay.is-visible { opacity: 1; pointer-events: auto; }
+.rfq-drawer {
+  position: fixed; top: 0; right: 0; z-index: 39; display: flex; flex-direction: column; width: min(440px, 100%); height: 100dvh;
+  background: #fff; box-shadow: -18px 0 46px rgba(0,0,0,.16); transform: translateX(105%); transition: transform .3s ease;
+}
+.rfq-drawer.is-open { transform: translateX(0); }
+.rfq-drawer-head { display: flex; align-items: flex-start; justify-content: space-between; padding: 27px 26px 22px; border-bottom: 1px solid var(--line); }
+.rfq-drawer-head p, .rfq-modal-eyebrow { color: var(--accent); font-size: 10px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; }
+.rfq-drawer-head h2 { margin-top: 3px; color: #23313d; font-family: "Cormorant Garamond", Georgia, serif; font-size: 32px; font-weight: 600; }
+.rfq-drawer-head > button { border: 0; background: none; color: var(--muted); cursor: pointer; font-size: 30px; line-height: 1; }
+.rfq-drawer-items { flex: 1; overflow-y: auto; padding: 18px 26px 26px; }
+.rfq-empty { margin: 26px 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+.rfq-item { padding: 20px 0; border-bottom: 1px solid var(--line); }
+.rfq-item-title { display: flex; justify-content: space-between; gap: 14px; }
+.rfq-item-title h3 { color: #23313d; font-size: 15px; }
+.rfq-item-title p { margin-top: 3px; color: var(--muted); font-size: 13px; }
+.rfq-remove { border: 0; background: none; color: #9b4b45; font-size: 11px; text-decoration: underline; }
+.rfq-meta { display: flex; flex-wrap: wrap; gap: 7px 15px; margin: 14px 0; color: var(--muted); font-size: 12px; }
+.rfq-field { display: grid; gap: 7px; margin-top: 13px; color: #23313d; font-size: 12px; font-weight: 700; }
+.rfq-field textarea, .rfq-product-fields textarea, .rfq-form textarea, .rfq-product-fields input, .rfq-form input {
+  width: 100%; border: 1px solid var(--line); border-radius: 2px; background: #fff; color: var(--ink); font: inherit; font-size: 13px; font-weight: 400; line-height: 1.5; padding: 9px 10px; resize: vertical;
+}
+.rfq-quantity-control { display: inline-grid; grid-template-columns: 34px 64px 34px; width: max-content; border: 1px solid var(--line); border-radius: 2px; overflow: hidden; }
+.rfq-quantity-control button { border: 0; background: var(--bg-alt); color: #23313d; font-size: 18px; }
+.rfq-quantity-control input { width: 64px; border: 0; border-left: 1px solid var(--line); border-right: 1px solid var(--line); font: inherit; text-align: center; }
+.rfq-drawer-footer { padding: 18px 26px 26px; border-top: 1px solid var(--line); }
+.rfq-drawer-footer p { margin-bottom: 13px; color: var(--muted); font-size: 13px; }
+.rfq-email-button, .rfq-form-submit { width: 100%; border: 1px solid #23313d; border-radius: 2px; background: #23313d; color: #fff; padding: 13px 16px; font-size: 12px; font-weight: 700; letter-spacing: .7px; text-transform: uppercase; }
+.rfq-email-button:disabled { border-color: #bac0bd; background: #bac0bd; cursor: not-allowed; }
+.custom-rfq-modal { z-index: 45; }
+.custom-rfq-box { max-width: 610px; }
+.custom-rfq-box h2 { margin-top: 5px; color: #23313d; font-family: "Cormorant Garamond", Georgia, serif; font-size: 35px; font-weight: 600; }
+.rfq-modal-intro { margin: 10px 0 22px; color: var(--muted); font-size: 14px; }
+.rfq-form, .rfq-product-form { display: grid; gap: 14px; margin-top: 22px; }
+.rfq-form label, .rfq-product-fields label { display: grid; gap: 6px; color: #23313d; font-size: 12px; font-weight: 700; }
+.rfq-product-fields { display: grid; gap: 13px; }
+.rfq-modal-meta { display: flex; flex-wrap: wrap; gap: 8px 18px; color: var(--muted); font-size: 12px; }
+.rfq-product-form { padding-top: 22px; border-top: 1px solid var(--line); }
+
+@media (max-width: 720px) {
+  .site-header nav { flex-wrap: wrap; justify-content: flex-start; }
+  .rfq-nav-button { margin-left: 0; padding: 7px 9px; }
+  .series-head { flex-direction: column; }
+  .series-head .rfq-add-button { margin-top: 0; }
+}
+@media (max-width: 520px) {
+  .rfq-float-button { right: 16px; bottom: 16px; }
+  .rfq-drawer-head, .rfq-drawer-items, .rfq-drawer-footer { padding-left: 19px; padding-right: 19px; }
+  .custom-rfq-box { padding: 28px 20px; }
+}
+@media (max-width: 720px) {
+  .site-header nav a { margin-left: 0; }
+}
+.ffe-project-button { margin-top: 24px; padding: 12px 18px; }
