@@ -136,9 +136,10 @@
       lines.push("");
     });
     lines.push("Best regards,");
-    const recipients = (CATALOG.company.emails || [CATALOG.company.email]).filter(Boolean).join(",");
+    const [toRecipient, ...ccRecipients] = (CATALOG.company.emails || [CATALOG.company.email]).filter(Boolean);
     const subject = "RFQ Inquiry — LI & FUNG HOSPITALITY";
-    window.location.href = `mailto:${recipients}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join("\n"))}`;
+    const cc = ccRecipients.length ? `&cc=${encodeURIComponent(ccRecipients.join(","))}` : "";
+    window.location.href = `mailto:${toRecipient}?subject=${encodeURIComponent(subject)}${cc}&body=${encodeURIComponent(lines.join("\n"))}`;
   }
 
   function renderRfq() {
