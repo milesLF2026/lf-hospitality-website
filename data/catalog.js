@@ -239,7 +239,7 @@ const CATALOG = {
       collection: "case2",
       image: "images/uniform/case2/chinese-restaurant-look-1.jpg",
       description: "Modern oriental uniform with mandarin collar and contrast palette.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
+      specs: { Customization: "Design, fabric, colors & logo fully custom-made" },
     },
     {
       name: "Chinese Restaurant Look 02",
@@ -247,7 +247,7 @@ const CATALOG = {
       collection: "case2",
       image: "images/uniform/case2/chinese-restaurant-look-2.jpg",
       description: "Modern oriental uniform with mandarin collar and contrast palette.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
+      specs: { Customization: "Design, fabric, colors & logo fully custom-made" },
     },
     {
       name: "Chinese Restaurant Look 03",
@@ -255,7 +255,7 @@ const CATALOG = {
       collection: "case2",
       image: "images/uniform/case2/chinese-restaurant-look-3.jpg",
       description: "Modern oriental uniform with mandarin collar and contrast palette.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
+      specs: { Customization: "Design, fabric, colors & logo fully custom-made" },
     },
     {
       name: "Chinese Restaurant Look 04",
@@ -263,7 +263,7 @@ const CATALOG = {
       collection: "case2",
       image: "images/uniform/case2/chinese-restaurant-look-4.jpg",
       description: "Modern oriental uniform with mandarin collar and contrast palette.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
+      specs: { Customization: "Design, fabric, colors & logo fully custom-made" },
     },
     {
       name: "Chinese Restaurant Look 05",
@@ -271,7 +271,7 @@ const CATALOG = {
       collection: "case2",
       image: "images/uniform/case2/chinese-restaurant-look-5.jpg",
       description: "Modern oriental uniform with mandarin collar and contrast palette.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
+      specs: { Customization: "Design, fabric, colors & logo fully custom-made" },
     },
     {
       name: "Chinese Restaurant Look 06",
@@ -279,7 +279,7 @@ const CATALOG = {
       collection: "case2",
       image: "images/uniform/case2/chinese-restaurant-look-6.jpg",
       description: "Modern oriental uniform with mandarin collar and contrast palette.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
+      specs: { Customization: "Design, fabric, colors & logo fully custom-made" },
     },
     {
       name: "Dining Service Look 01",
@@ -287,7 +287,7 @@ const CATALOG = {
       collection: "case3",
       image: "images/uniform/case3/dining-service-look-1.jpg",
       description: "Earth-tone shirt with full apron for all-day dining service.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
+      specs: { Customization: "Design, fabric, colors & logo fully custom-made" },
     },
     {
       name: "Dining Service Look 02",
@@ -295,7 +295,7 @@ const CATALOG = {
       collection: "case3",
       image: "images/uniform/case3/dining-service-look-2.jpg",
       description: "Earth-tone shirt with full apron for all-day dining service.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
+      specs: { Customization: "Design, fabric, colors & logo fully custom-made" },
     },
     {
       name: "Dining Service Look 03",
@@ -303,7 +303,7 @@ const CATALOG = {
       collection: "case3",
       image: "images/uniform/case3/dining-service-look-3.jpg",
       description: "Earth-tone shirt with full apron for all-day dining service.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
+      specs: { Customization: "Design, fabric, colors & logo fully custom-made" },
     },
     {
       name: "Dining Service Look 04",
@@ -311,7 +311,7 @@ const CATALOG = {
       collection: "case3",
       image: "images/uniform/case3/dining-service-look-4.jpg",
       description: "Earth-tone shirt with full apron for all-day dining service.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
+      specs: { Customization: "Design, fabric, colors & logo fully custom-made" },
     },
     {
       name: "Dining Service Look 05",
@@ -319,7 +319,7 @@ const CATALOG = {
       collection: "case3",
       image: "images/uniform/case3/dining-service-look-5.jpg",
       description: "Earth-tone shirt with full apron for all-day dining service.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
+      specs: { Customization: "Design, fabric, colors & logo fully custom-made" },
     },
     {
       name: "Dining Service Look 06",
@@ -327,7 +327,7 @@ const CATALOG = {
       collection: "case3",
       image: "images/uniform/case3/dining-service-look-6.jpg",
       description: "Earth-tone shirt with full apron for all-day dining service.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
+      specs: { Customization: "Design, fabric, colors & logo fully custom-made" },
     },
     {
       name: "Resort Service Look 01",
@@ -383,7 +383,7 @@ const CATALOG = {
       collection: "case6",
       image: "images/uniform/case6/fine-dining-host-01.jpg",
       description: "Elegant host and hostess uniform for premium restaurant service.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
+      specs: { Customization: "Design, fabric, colors & logo fully custom-made" },
     },
     {
       name: "Japanese Restaurant Look 02",
@@ -391,7 +391,7 @@ const CATALOG = {
       collection: "case6",
       image: "images/uniform/case6/fine-dining-host-02.jpg",
       description: "Elegant host and hostess uniform for premium restaurant service.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
+      specs: { Customization: "Design, fabric, colors & logo fully custom-made" },
     },
     {
       name: "Japanese Restaurant Look 03",
@@ -399,7 +399,7 @@ const CATALOG = {
       collection: "case6",
       image: "images/uniform/case6/fine-dining-host-03.jpg",
       description: "Elegant host and hostess uniform for premium restaurant service.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
+      specs: { Customization: "Design, fabric, colors & logo fully custom-made" },
     },
     {
       name: "Japanese Restaurant Look 04",
@@ -407,7 +407,7 @@ const CATALOG = {
       collection: "case6",
       image: "images/uniform/case6/fine-dining-host-04.jpg",
       description: "Elegant host and hostess uniform for premium restaurant service.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
+      specs: { Customization: "Design, fabric, colors & logo fully custom-made" },
     },
     {
       name: "Japanese Restaurant Look 05",
@@ -415,7 +415,7 @@ const CATALOG = {
       collection: "case6",
       image: "images/uniform/case6/fine-dining-host-05.jpg",
       description: "Elegant host and hostess uniform for premium restaurant service.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
+      specs: { Customization: "Design, fabric, colors & logo fully custom-made" },
     },
     {
       name: "Japanese Restaurant Look 06",
@@ -423,7 +423,7 @@ const CATALOG = {
       collection: "case6",
       image: "images/uniform/case6/fine-dining-host-06.jpg",
       description: "Elegant host and hostess uniform for premium restaurant service.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
+      specs: { Customization: "Design, fabric, colors & logo fully custom-made" },
     },
     {
       name: "Nightlife & Lounge Look 01",
@@ -431,7 +431,7 @@ const CATALOG = {
       collection: "case7",
       image: "images/uniform/case7/nightlife-lounge-01.jpg",
       description: "Statement uniform for luxury lounge, bar and evening service.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
+      specs: { Customization: "Design, fabric, colors & logo fully custom-made" },
     },
     {
       name: "Nightlife & Lounge Look 02",
@@ -439,7 +439,7 @@ const CATALOG = {
       collection: "case7",
       image: "images/uniform/case7/nightlife-lounge-02.jpg",
       description: "Statement uniform for luxury lounge, bar and evening service.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
+      specs: { Customization: "Design, fabric, colors & logo fully custom-made" },
     },
     {
       name: "Nightlife & Lounge Look 03",
@@ -447,7 +447,7 @@ const CATALOG = {
       collection: "case7",
       image: "images/uniform/case7/nightlife-lounge-03.jpg",
       description: "Statement uniform for luxury lounge, bar and evening service.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
+      specs: { Customization: "Design, fabric, colors & logo fully custom-made" },
     },
     {
       name: "Nightlife & Lounge Look 04",
@@ -455,7 +455,7 @@ const CATALOG = {
       collection: "case7",
       image: "images/uniform/case7/nightlife-lounge-04.jpg",
       description: "Statement uniform for luxury lounge, bar and evening service.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
+      specs: { Customization: "Design, fabric, colors & logo fully custom-made" },
     },
     {
       name: "Nightlife & Lounge Look 05",
@@ -463,7 +463,7 @@ const CATALOG = {
       collection: "case7",
       image: "images/uniform/case7/nightlife-lounge-05.jpg",
       description: "Statement uniform for luxury lounge, bar and evening service.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
+      specs: { Customization: "Design, fabric, colors & logo fully custom-made" },
     },
     {
       name: "Nightlife & Lounge Look 06",
@@ -471,7 +471,7 @@ const CATALOG = {
       collection: "case7",
       image: "images/uniform/case7/nightlife-lounge-06.jpg",
       description: "Statement uniform for luxury lounge, bar and evening service.",
-      specs: { Customization: "Design, fabric, colors & logo fully custom-made", MOQ: "50 pcs" },
+      specs: { Customization: "Design, fabric, colors & logo fully custom-made" },
     },
 
     {

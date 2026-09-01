@@ -14,7 +14,7 @@
 
   function normalizeCart(cart) {
     return Array.isArray(cart) ? cart.map((item) => {
-      if (item.type === "customize") return { ...item, moq: "50 pcs" };
+      if (item.type === "customize") return { ...item, moq: "To be confirmed" };
       if (item.type === "ffe-project") return { ...item, moq: "" };
       return item;
     }) : [];
@@ -254,7 +254,7 @@
         name: "Customize Uniform",
         detail: "Custom uniform inquiry",
         quantity: normalizeQuantity(data.get("quantity")),
-        moq: "50 pcs",
+        moq: "To be confirmed",
         leadTime: "To be confirmed",
         notes,
       });
