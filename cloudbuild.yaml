@@ -1,0 +1,52 @@
+# Builds the static site into an nginx image, pushes it to Artifact Registry,
+# and deploys it to Cloud Run. Runs on every push to master via a Cloud Build trigger,
+# or manually with:
+#   gcloud builds submit --config cloudbuild.yaml --region asia-southeast1 \
+#     --service-account projects/lft-lfeu-lfhospitalitywebsite/serviceAccounts/lf-hospitality-cloudbuild@lft-lfeu-lfhospitalitywebsite.iam.gserviceaccount.com
+
+substitutions:
+  _REGION: asia-southeast1
+  _SERVICE: lf-hospitality-website
+  _AR_REPO: lf-hospitality
+  _RUNTIME_SA_NAME: lf-hospitality-web-run
+
+steps:
+  - id: build
+    name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - -t
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPO}/${_SERVICE}:$BUILD_ID
+      - -t
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPO}/${_SERVICE}:latest
+      - .
+
+  - id: push
+    name: gcr.io/cloud-builders/docker
+    args:
+      - push
+      - --all-tags
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPO}/${_SERVICE}
+
+  - id: deploy
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - ${_SERVICE}
+      - --image=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPO}/${_SERVICE}:$BUILD_ID
+      - --region=${_REGION}
+      - --service-account=${_RUNTIME_SA_NAME}@$PROJECT_ID.iam.gserviceaccount.com
+      - --port=8080
+      - --cpu=1
+      - --memory=256Mi
+      - --min-instances=0
+      - --max-instances=5
+      - --allow-unauthenticated
+      - --quiet
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+timeout: 900s
