@@ -54,8 +54,8 @@ miles-hotel-supplies/
 
 网站部署在 GCP 项目 `lft-lfeu-lfhospitalitywebsite` 的 Cloud Run（新加坡 `asia-southeast1`），服务名 `lf-hospitality-website`。
 
-- 推送到 `master` 分支后，Cloud Build 会自动构建并发布，约 1–2 分钟生效。
-- 相关文件：`Dockerfile`（nginx 镜像）、`nginx.conf`（站点配置）、`cloudbuild.yaml`（构建与发布步骤）。
+- 推送到 `master` 分支后，GitHub Actions 会调用 Cloud Build 自动构建并发布，约 2–3 分钟生效（进度见仓库的 Actions 页面）。
+- 相关文件：`Dockerfile`（nginx 镜像）、`nginx.conf`（站点配置）、`cloudbuild.yaml`（构建与发布步骤）、`.github/workflows/deploy.yml`（推送触发）。
 - 新增页面或图片无需改部署配置，会自动包含（`.dockerignore` 中列出的文件除外）。
 
 ## 当前状态（第一阶段）

@@ -1,5 +1,5 @@
 # Builds the static site into an nginx image, pushes it to Artifact Registry,
-# and deploys it to Cloud Run. Runs on every push to master via a Cloud Build trigger,
+# and deploys it to Cloud Run. Runs on every push to master via .github/workflows/deploy.yml,
 # or manually with:
 #   gcloud builds submit --config cloudbuild.yaml --region asia-southeast1 \
 #     --service-account projects/lft-lfeu-lfhospitalitywebsite/serviceAccounts/lf-hospitality-cloudbuild@lft-lfeu-lfhospitalitywebsite.iam.gserviceaccount.com

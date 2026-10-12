@@ -1,7 +1,9 @@
 .git
+.github
 .gitignore
 .gcloudignore
 .dockerignore
+gha-creds-*.json
 Dockerfile
 cloudbuild.yaml
 README.md
